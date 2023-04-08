@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 2000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+.bg {
+    width: 3000px;
+    height: 1750px;
+    position: relative;
+    background-color: rgb(168, 215, 148);
+    border: 3px solid black;
+}
+
+.wall {
+    width: 80%;
+    height: 80%;
+    border: 10px solid black ;
+    background-image: url(../images/wall_white.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 10%;
+    left: 10%; 
+    display: inline-block;
+    display: flex;
+    perspective: 2000px;
+    overflow: hidden;
+}
+
+.text {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 200px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.gate {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    z-index: 3;
+}
+
+.left_door { 
+    background-image: url(../images/gate_left.png);
+}
+
+.right_door {
+    background-image: url(../images/gate_right.png);
+}
+
+
+.wall:hover > .left_door {
+    transform: rotateY(60deg) ;
+    transform-origin: left center;
+    transition: 2s;
+}
+
+.wall:hover > .right_door {
+    transform: rotateY(-60deg);
+    transform-origin: right center;
+    transition: 2s;
+}
